@@ -16,12 +16,23 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
+    getHealth() {
+        console.log('Health check');
+        return this.appService.areYouOk();
+    }
     getHello() {
+        console.log('Hola!');
         return this.appService.getHello();
     }
 };
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)("health"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], AppController.prototype, "getHealth", null);
+__decorate([
+    (0, common_1.Get)("ping"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
